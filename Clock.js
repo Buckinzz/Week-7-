@@ -1,29 +1,25 @@
-let hours = document.querySelector(`.hours`);
-let mins = document.querySelector(`.mins`);
-let clockHours = [1,2,3,4,5,6,7,8,9,10,11,12];
+function showTime() {
+    let time = new Date();
+    let hr = time.getHours();
+    let min = time.getMinutes();
+    let sec = time.getSeconds();
+    let am_pm = `AM`;
 
-setInterval(() => {
-    let clockMins = Number(mins.innerHTML);
-    clockMins++;
-
-    
-    if(clockMins !== 60) {
-        if(String(clockMins).length == 1) {
-            mins.innerHTML = `0${clockMins}`;
-        } else {
-            mins.innerHTML = clockMins;
-        }
-    } 
-    
-    
-    else {
-        let setHour = clockHours.indexOf(Number(hours.innerHTML));
-        if(setHour == (clockHours.length - 1)) {
-            hours.innerHTML = clockHours[0];
-            mins.innerHTML = `00`;
-        } else {
-            hours.innerHTML = clockHours[(setHour + 1)];
-            mins.innerHTML = `00`;
-        }
+    if(hr > 12) {
+        hr -= 12;
+        am_pm = "PM"
     }
-}, 1000);
+    if( hr == 0) {
+        hr = 12;
+    }
+
+    hr = (hr<10) ? "0" + hr : hr;
+    min = (min<10) ? "0" + min : min;
+    sec = (sec<10) ? "0" + sec : sec;
+
+    let currentTime = hr + `:`+ min+ `:`+ sec + "" + am_pm;
+    document.getElementById(`clock`).innerHTML = currentTime;
+
+    setTimeout(showTime, 1000);
+}
+showTime();

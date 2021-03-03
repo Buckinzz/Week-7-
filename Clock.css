@@ -1,9 +1,9 @@
 body {
     background: blue;
 }
-.clock {
+#clock {
     background: rgb(255, 0, 221);
-    width: 125px;
+    width: 250px;
     padding: 5px;
     margin: auto;
     border-radius: 10px;
