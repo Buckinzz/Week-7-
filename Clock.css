@@ -1,4 +1,6 @@
-
+body {
+    background: blue;
+}
 .clock {
     background: rgb(255, 0, 221);
     width: 125px;
