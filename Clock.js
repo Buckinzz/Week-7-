@@ -20,6 +20,6 @@ function showTime() {
     let currentTime = hr + `:`+ min+ `:`+ sec + "" + am_pm;
     document.getElementById(`clock`).innerHTML = currentTime;
 
-    setTimeout(showTime, 1000);
+    setInterval(showTime, 1000);
 }
 showTime();
