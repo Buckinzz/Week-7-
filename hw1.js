@@ -33,6 +33,13 @@ console.log(const1);
 
 const empty = [];
 
+/* Only thing here is empty should have been an object. All
+your stuff works just fine with an array, but if this was an object,
+your for..in loop would have worked just fine.
+
+const empty = {};
+*/
+
 
 empty.name = "Buck";
 empty.age = "25";
