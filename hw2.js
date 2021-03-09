@@ -49,8 +49,6 @@ let q = new Employee("Jimmy", 25, "Lab", "F7354", "Web Development Solutions Inc
 console.log(q.getid());
 console.log(q.companyName);
 
-
-//3
 class Manager extends Employee
 {
     constructor(name, age, pet, ident, companyName, employees)  
@@ -71,7 +69,6 @@ r.newEmployees();
 console.log(r.employees);
 
 
-//4
 class Clerk extends Employee
 {
     constructor(name, age, pet, ident, companyName, superID)  
